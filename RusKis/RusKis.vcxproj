@@ -19,7 +19,7 @@
     <ClCompile Include="Hacks\Chams.cpp" />
     <ClCompile Include="Hacks\Esp.cpp" />
     <ClCompile Include="Hacks\Glow.cpp" />
-	<ClCompile Include="Hacks\PredictionSystem.cpp" />
+    <ClCompile Include="Hacks\PredictionSystem.cpp" />
     <ClCompile Include="Hacks\Reportbot.cpp" />
     <ClCompile Include="Hacks\SkinChanger.cpp" />
     <ClCompile Include="Hacks\Triggerbot.cpp" />
@@ -54,7 +54,7 @@
     <ClInclude Include="Hacks\Esp.h" />
     <ClInclude Include="Hacks\Glow.h" />
     <ClInclude Include="Hacks\Misc.h" />
-	<ClInclude Include="Hacks\PredictionSystem.h" />
+    <ClInclude Include="Hacks\PredictionSystem.h" />
     <ClInclude Include="Hacks\Reportbot.h" />
     <ClInclude Include="Hacks\SkinChanger.h" />
     <ClInclude Include="Hacks\Triggerbot.h" />
@@ -67,7 +67,7 @@
     <ClInclude Include="nSkinz\item_definitions.hpp" />
     <ClInclude Include="nSkinz\Utilities\Platform.hpp" />
     <ClInclude Include="nSkinz\Utilities\vmt_smart_hook.hpp" />
-	<ClInclude Include="SDK\Angle.h" />
+    <ClInclude Include="SDK\Angle.h" />
     <ClInclude Include="SDK\AnimState.h" />
     <ClInclude Include="SDK\Client.h" />
     <ClInclude Include="SDK\ConVar.h" />
@@ -93,7 +93,7 @@
     <ClInclude Include="SDK\FrameStage.h" />
     <ClInclude Include="SDK\GameEvent.h" />
     <ClInclude Include="SDK\GameEventManager.h" />
-	<ClInclude Include="SDK\GameMovement.h" />
+    <ClInclude Include="SDK\GameMovement.h" />
     <ClInclude Include="SDK\GameUI.h" />
     <ClInclude Include="SDK\GlobalVars.h" />
     <ClInclude Include="SDK\GlowObjectManager.h" />
@@ -106,12 +106,12 @@
     <ClInclude Include="SDK\matrix3x4.h" />
     <ClInclude Include="SDK\ModelInfo.h" />
     <ClInclude Include="SDK\ModelRender.h" />
-	<ClInclude Include="SDK\MoveData.h" />
+    <ClInclude Include="SDK\MoveData.h" />
     <ClInclude Include="SDK\MoveHelper.h" />
     <ClInclude Include="SDK\NetworkChannel.h" />
     <ClInclude Include="SDK\Panel.h" />
     <ClInclude Include="SDK\PhysicsSurfaceProps.h" />
-	<ClInclude Include="SDK\Prediction.h" />
+    <ClInclude Include="SDK\Prediction.h" />
     <ClInclude Include="SDK\Recv.h" />
     <ClInclude Include="SDK\RenderContext.h" />
     <ClInclude Include="SDK\RenderView.h" />
@@ -124,10 +124,10 @@
     <ClInclude Include="SDK\VarMapping.h" />
     <ClInclude Include="SDK\Vector.h" />
     <ClInclude Include="SDK\Utils.h" />
-	<ClInclude Include="SDK\ViewSetup.h" />
+    <ClInclude Include="SDK\ViewSetup.h" />
     <ClInclude Include="SDK\WeaponId.h" />
     <ClInclude Include="SDK\WeaponData.h" />
-	<ClInclude Include="SDK\WeaponType.h" />
+    <ClInclude Include="SDK\WeaponType.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -135,7 +135,7 @@
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>RusKis</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-	<ProjectName>RusKis</ProjectName>
+    <ProjectName>RusKis</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -194,17 +194,16 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <Optimization>MaxSpeed</Optimization>
+      <Optimization>Disabled</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_USE_MATH_DEFINES;WIN32_LEAN_AND_MEAN;WINVER=0x0601;_WIN32_WINNT=0x0601;WIN32;NDEBUG;OSIRIS_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <DebugInformationFormat>None</DebugInformationFormat>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <InlineFunctionExpansion>
-      </InlineFunctionExpansion>
-      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
-      <OmitFramePointers>true</OmitFramePointers>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
+      <OmitFramePointers>false</OmitFramePointers>
       <StringPooling>true</StringPooling>
       <FloatingPointModel>Fast</FloatingPointModel>
       <FloatingPointExceptions>false</FloatingPointExceptions>
@@ -215,6 +214,7 @@
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <AdditionalOptions>/Gw /Ob3 %(AdditionalOptions)</AdditionalOptions>
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
