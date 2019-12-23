@@ -715,6 +715,7 @@ void Config::load(size_t id) noexcept
         if (visualsJson.isMember("Hit marker")) visuals.hitMarker = visualsJson["Hit marker"].asInt();
         if (visualsJson.isMember("Hit marker time")) visuals.hitMarkerTime = visualsJson["Hit marker time"].asFloat();
         if (visualsJson.isMember("Hit marker Damage Indicator")) visuals.hitMarkerDamageIndicator = visualsJson["Hit marker Damage Indicator"].asBool();
+        if (visualsJson.isMember("Playermodel")) visuals.playerModel = visualsJson["Playermodel"].asInt();
 		if (visualsJson.isMember("View Model")) visuals.viewModel = visualsJson["View Model"].asBool();
 		if (visualsJson.isMember("ViewModel X")) visuals.viewModel_x = visualsJson["ViewModel X"].asFloat();
 		if (visualsJson.isMember("ViewModel Y")) visuals.viewModel_y = visualsJson["ViewModel Y"].asFloat();
@@ -862,6 +863,9 @@ void Config::load(size_t id) noexcept
         if (miscJson.isMember("Fix bone matrix")) misc.fixBoneMatrix = miscJson["Fix bone matrix"].asBool();
         if (miscJson.isMember("Fix movement")) misc.fixMovement = miscJson["Fix movement"].asBool();
         if (miscJson.isMember("Disable model occlusion")) misc.disableModelOcclusion = miscJson["Disable model occlusion"].asBool();
+        if (miscJson.isMember("Chat spam")) misc.chatSpam = miscJson["Chat spam"].asBool();
+        if (miscJson.isMember("Chat spam delay")) misc.chatSpamDelay = miscJson["Chat spam delay"].asInt();
+        if (miscJson.isMember("Chat spam text")) strcpy_s(misc.chatSpamText, sizeof(misc.chatSpamText), miscJson["Chat spam text"].asCString());
         if (miscJson.isMember("Kill message")) misc.killMessage = miscJson["Kill message"].asBool();
         if (miscJson.isMember("Kill message string")) strcpy_s(misc.killMessageString, sizeof(misc.killMessageString), miscJson["Kill message string"].asCString());
         if (miscJson.isMember("Name stealer"))  misc.nameStealer = miscJson["Name stealer"].asBool();
@@ -1484,6 +1488,7 @@ void Config::save(size_t id) const noexcept
         visualsJson["Hit marker time"] = visuals.hitMarkerTime;
 		visualsJson["View Model"] = visuals.viewModel;
         visualsJson["Hit marker Damage Indicator"] = visuals.hitMarkerDamageIndicator;
+        visualsJson["Playermodel"] = visuals.playerModel;
 		visualsJson["ViewModel X"] = visuals.viewModel_x;
 		visualsJson["ViewModel Y"] = visuals.viewModel_y;
 		visualsJson["ViewModel Z"] = visuals.viewModel_z;
@@ -1609,6 +1614,9 @@ void Config::save(size_t id) const noexcept
         miscJson["Fix bone matrix"] = misc.fixBoneMatrix;
         miscJson["Fix movement"] = misc.fixMovement;
         miscJson["Disable model occlusion"] = misc.disableModelOcclusion;
+        miscJson["Chat spam"] = misc.chatSpam;
+        miscJson["Chat spam delay"] = misc.chatSpamDelay;
+        miscJson["Chat spam text"] = misc.chatSpamText;
         miscJson["Kill message"] = misc.killMessage;
         miscJson["Kill message string"] = misc.killMessageString;
         miscJson["Name stealer"] = misc.nameStealer;

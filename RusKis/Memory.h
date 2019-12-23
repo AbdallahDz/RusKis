@@ -1,7 +1,7 @@
 #pragma once
 
 #include <sstream>
-#include <string_view>
+#include <type_traits>
 #include <Windows.h>
 #include <Psapi.h>
 
@@ -57,6 +57,7 @@ public:
     uintptr_t test2;
     uint8_t* fakePrime;
     uintptr_t* predictionRandomSeed;
+    std::add_pointer_t<void __cdecl(const char* msg, ...)> debugMsg;
     uintptr_t(__thiscall* md5PseudoRandom)(uintptr_t);
 
 private:

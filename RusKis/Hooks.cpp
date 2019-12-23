@@ -142,6 +142,7 @@ static bool __stdcall createMove(float inputSampleTime, UserCmd* cmd) noexcept
 	Misc::fakeVote();
 	Misc::fakeBan();
 	Misc::stealNames();
+	Misc::chatSpam();
 	Misc::revealRanks(cmd);
 	Misc::quickReload(cmd);
 	Misc::moonwalk(cmd);
@@ -261,6 +262,7 @@ static void __stdcall frameStageNotify(FrameStage stage) noexcept
 
 	if (interfaces.engine->isInGame()) {
 		Visuals::thirdperson(stage, angle, choked, unchoked);
+		Visuals::playerModel(stage);
 		Visuals::removeVisualRecoil(stage);
 		Visuals::applyZoom(stage);
 		Visuals::noZoom();

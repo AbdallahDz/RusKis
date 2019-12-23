@@ -821,6 +821,7 @@ void GUI::renderVisualsWindow() noexcept
         ImGui::Combo("Hitmarker", &config.visuals.hitMarker, "None\0Drone Cam\0Drone Cam With Noise\0Underwater\0Healthboost\0Dangerzone\0Classic\0");
         ImGui::SliderFloat("Hitmarker Time", &config.visuals.hitMarkerTime, 0.1f, 1.5f, "%.2fs");
         ImGui::Checkbox("Damage Indicator", &config.visuals.hitMarkerDamageIndicator);
+        ImGui::Combo("Player Model", &config.visuals.playerModel, "Special Agent Ava | FBI\0Operator | FBI SWAT\0Markus Delrow | FBI HRT\0Michael Syfers | FBI Sniper\0B Squadron Officer | SAS\0Seal Team 6 Soldier | NSWC SEAL\0Buckshot | NSWC SEAL\0Lt. Commander Ricksaw | NSWC SEAL\0Third Commando Company | KSK\0'Two Times' McCoy | USAF TACP\0Dragomir | Sabre\0Rezan The Ready | Sabre\0'The Doctor' Romanov | Sabre\0Maximus | Sabre\0Blackwolf | Sabre\0The Elite Mr. Muhlik | Elite Crew\0Ground Rebel | Elite Crew\0Osiris | Elite Crew\0Prof. Shahmat | Elite Crew\0Enforcer | Phoenix\0Slingshot | Phoenix\0Soldier | Phoenix\0");
 		ImGui::Checkbox("Viewmodel Offsets", &config.visuals.viewModel);
 		if (config.visuals.viewModel) {
 			ImGui::PushID(6);
@@ -1056,7 +1057,6 @@ void GUI::renderMiscWindow() noexcept
         ImGui::Checkbox("Fix Movement", &config.misc.fixMovement);
         ImGui::Checkbox("Disable Model Occlusion", &config.misc.disableModelOcclusion);
         ImGui::NextColumn();
-        ImGui::Checkbox("Disable HUD blur", &config.misc.disablePanoramablur);
         ImGui::Checkbox("Custom clantag", &config.misc.customClanTag);
         ImGui::SameLine();
         ImGui::PushItemWidth(120.0f);
@@ -1065,6 +1065,9 @@ void GUI::renderMiscWindow() noexcept
             Misc::updateClanTag(true);
         ImGui::Checkbox("Animated clan tag", &config.misc.animatedClanTag);
         ImGui::Checkbox("Clock tag", &config.misc.clocktag);
+        ImGui::Checkbox("Chat Spam", &config.misc.chatSpam);
+        ImGui::SliderInt("Delay (s)", &config.misc.chatSpamDelay, 0, 120);
+        ImGui::InputTextMultiline("Text", config.misc.chatSpamText, IM_ARRAYSIZE(config.misc.chatSpamText));
         ImGui::Checkbox("Killsay", &config.misc.killMessage);
         ImGui::SameLine();
         ImGui::PushItemWidth(120.0f);

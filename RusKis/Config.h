@@ -198,6 +198,7 @@ public:
         int hitMarker{ 0 };
         float hitMarkerTime{ 0.6f };
         bool hitMarkerDamageIndicator{ false };
+        int playerModel{ 0 };
 		bool viewModel{ false };
 		float viewModel_x{ 0 };
 		float viewModel_y{ 0 };
@@ -259,6 +260,9 @@ public:
         bool fixBoneMatrix{ false };
         bool fixMovement{ false };
         bool disableModelOcclusion{ false };
+        bool chatSpam{ false };
+        int chatSpamDelay{ 0 };
+        char chatSpamText[8192]{ };
         bool killMessage{ false };
         char killMessageString[230]{ "sample text" };
         bool nameStealer{ false };
