@@ -40,10 +40,10 @@ void Visuals::playerModel(FrameStage stage) noexcept
 "models/player/custom_player/legacy/tm_phoenix_varianth.mdl"
     };
 
-    auto localPlayer = interfaces.entityList->getEntity(interfaces.engine->getLocalPlayer());
-
-    if (stage == FrameStage::NET_UPDATE_POSTDATAUPDATE_START)
-        localPlayer->setModelIndex(interfaces.modelInfo->getModelIndex(models[config.visuals.playerModel]));
+    if (config.visuals.playerModel > 0 && stage == FrameStage::NET_UPDATE_POSTDATAUPDATE_START) {
+        auto localPlayer = interfaces.entityList->getEntity(interfaces.engine->getLocalPlayer());
+        localPlayer->setModelIndex(interfaces.modelInfo->getModelIndex(models[config.visuals.playerModel - 1]));
+    }
 }
 
 void Visuals::disablePanoramablur() noexcept
